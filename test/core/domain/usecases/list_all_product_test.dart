@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import '../../../utils/product_mock.dart';
-import 'list_all_product.mocks.dart';
+import 'list_all_product_test.mocks.dart';
 
 @GenerateMocks([IProductRepository])
 void main() {

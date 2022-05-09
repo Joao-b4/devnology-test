@@ -1,14 +1,10 @@
-import 'package:devnology/core/domain/entities/product.dart';
-import 'package:devnology/core/domain/repositories/product_repository_interface.dart';
-import 'package:devnology/core/infra/adapters/local_storage_adapter_hive.dart';
 import 'package:devnology/core/infra/adapters/local_storage_adapter_interface.dart';
-import 'package:devnology/core/infra/repositories/models/product_hive_type.dart';
 import 'package:devnology/core/infra/repositories/product_repository_hive.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import '../../../utils/product_mock.dart';
-import 'product_repository_hive.mocks.dart';
+import 'product_repository_hive_test.mocks.dart';
 
 @GenerateMocks([ILocalStorageAdapter])
 void main() {
