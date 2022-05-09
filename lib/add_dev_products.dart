@@ -1,0 +1,8 @@
+import 'package:devnology/core/infra/adapters/local_storage_adapter_hive.dart';
+import 'package:devnology/core/infra/repositories/models/product_hive_type.dart';
+
+addDevProducts(){
+  LocalStorageHiveAdapter().put("products", "0", ProductModel(id: "0", url: "https://devnology.com.br/", name: "Lenovo - IdeaPad L340 15 Gaming", description: "Lenovo - IdeaPad L340 15 Gaming Laptop - Intel Core i5 - 8GB Memory - NVIDIA GeForce GTX 1650 - 256GB Solid State", price: 717.80, images: ["assets/images/product1.png"]));
+  LocalStorageHiveAdapter().put("products", "1", ProductModel(id: "1", url: "https://devnology.com.br/", name: "Lenovo 15.6\" ThinkPad P15s Gen 1 Laptop, Intel Core i7-10510U Quad-Core, 16GB DDR4 RAM, 512GB SSD, NVIDIA Quadro P520, Windows 10 Pro (20T4001VUS)", description: "1.8 GHz Intel Core i7-10510U Quad-Core Processor 16GB of DDR4 RAM | 512GB SSD\n15.6\" 1920 x 1080 IPS Display\nNVIDIA Quadro P520\nWindows 10 Pro 64-Bit Edition\n1.8 GHz Intel Core i7-10510U Quad-Core Processor\n16GB of DDR4 RAM | 512GB SSD\n15.6\" 1920 x 1080 IPS Display\nNVIDIA Quadro P520", price: 1519.99, images: ["assets/images/product2.png","assets/images/product2.png","assets/images/product3.png"]));
+  LocalStorageHiveAdapter().put("products", "2", ProductModel(id: "2", url: "https://devnology.com.br/", name: "Notebook Lenovo 2 em 1", description: "Lenovo - IdeaPad L340 15 Gaming Laptop - Intel Core i5 - 8GB Memory - NVIDIA GeForce GTX 1650 - 256GB Solid State", price: 4699.00, images: ["assets/images/product3.png"]));
+}
