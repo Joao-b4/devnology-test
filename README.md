@@ -1,16 +1,80 @@
-# devnology
+> # devnology
 
-A new Flutter project.
+Flutter app for devnology test
 
-## Getting Started
+> ## Usage
+#### Installation
+```bash
+$ fvm flutter pub get
+```
+#### Run tests
+```bash
+$ fvm flutter test
+```
+#### Run app in device
+```bash
+$ fvm flutter run
+```
+### Development
+#### Build stores
+```bash
+$ fvm flutter packages pub run build_runner watch --delete-conflicting-outputs
+```
 
-This project is a starting point for a Flutter application.
+> ## Features
+* LocalStorage with Hive
+* Reactive programming with Mobx
+* Modular Design Pattern in Presenters with Flutter Modular
+* Tests with Flutter Tests
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+> ## Principles
+* Single Responsibility Principle (SRP)
+* Open Closed Principle (OCP)
+* Liskov Substitution Principle (LSP)
+* Interface Segregation Principle (ISP)
+* Dependency Inversion Principle (DIP)
+* Separation of Concerns (SOC)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> ## Design Patterns
+* Factory
+* Adapter
+* Dependency Injection
+* Singleton
+* Functional reactive programming (FRP) 
+
+> ## Methodologies and Designs
+* TDD
+* Clean Architecture
+* Modular Design 
+* Usecases
+
+> ## Tests Features
+* Testes Unitários
+* Mocks
+* Stubs
+
+> ## Libs
+* Mobx
+* Flutter Modular
+* Hive
+* Caroulsel Slider
+* Share plus
+> ### Global libs
+* Slidy
+* Fvm
+
+## Estrutura de arquivos
+```shell
+  $ tree
+  .
+  ├── src/
+  │   └── core/                             # camada nucleo da aplicacao contem camadas de infra e dominio
+  │   └── app/                              # camada da aplicavao visual (presenter)
+  │       └── modules/                      # pasta que contem modulos
+  │       └── shared/                       # pasta que compartilha arquivos entre os modulos
+  │   └── main.dart                         # arquivo que inicia o app
+  │   └── add_dev_products.dart             # arquivo que adiciona produtos de teste de dev
+  ├── README.md                             # este arquivo com a descricao do projeto
+  └── test/                                 # pasta com arquivos de teste
+```
