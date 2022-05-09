@@ -7,11 +7,11 @@ class CartRepositoryHive implements ICartRepository{
   final ILocalStorageAdapter localStorage;
   CartRepositoryHive(this.localStorage);
 
-  final collectionName = "cart";
+  final _collectionName = "cart";
 
   @override
   Future<Cart?> get(String id) async{
-    CartModel? cartModel = await localStorage.get(collectionName, id);
+    CartModel? cartModel = await localStorage.get(_collectionName, id);
     if(cartModel != null){
       return CartModel.fromModelToEntity(cartModel);
     }
@@ -19,24 +19,24 @@ class CartRepositoryHive implements ICartRepository{
 
   @override
   Future<List<Cart>> getAllItems() async{
-    List<CartModel> cartModels = List<CartModel>.from((await localStorage.getAll(collectionName)).toList());
+    List<CartModel> cartModels = List<CartModel>.from((await localStorage.getAll(_collectionName)).toList());
     return CartModel.fromModelCollectionToEntities(cartModels);
   }
 
   @override
   Future<void> saveItem(Cart cart) async{
     CartModel cartModel = CartModel.fromEntityToModel(cart);
-    await localStorage.put(collectionName, cart.product.id, cartModel);
+    await localStorage.put(_collectionName, cart.product.id, cartModel);
   }
 
   @override
   Future<void> updateItem(Cart cart) async{
     CartModel cartModel = CartModel.fromEntityToModel(cart);
-    await localStorage.put(collectionName, cart.product.id, cartModel);
+    await localStorage.put(_collectionName, cart.product.id, cartModel);
   }
 
   @override
   Future<void> deleteItem(String id) async{
-    await localStorage.delete(collectionName, id);
+    await localStorage.delete(_collectionName, id);
   }
 }

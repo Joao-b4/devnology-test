@@ -7,17 +7,17 @@ class ProductRepositoryHive implements IProductRepository{
   final ILocalStorageAdapter localStorage;
   ProductRepositoryHive(this.localStorage);
 
-  final collectionName = "products";
+  final _collectionName = "products";
 
   @override
   Future<List<Product>> getAll() async{
-    List<ProductModel> productModels = List<ProductModel>.from((await localStorage.getAll(collectionName)).toList());
+    List<ProductModel> productModels = List<ProductModel>.from((await localStorage.getAll(_collectionName)).toList());
     return ProductModel.fromModelCollectionToEntities(productModels);
   }
 
   @override
   Future<Product> get(String id) async{
-    ProductModel productModel = await localStorage.get(collectionName, id);
+    ProductModel productModel = await localStorage.get(_collectionName, id);
     return ProductModel.fromModelToEntity(productModel);
   }
 }
