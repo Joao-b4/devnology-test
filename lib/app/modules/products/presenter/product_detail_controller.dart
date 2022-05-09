@@ -37,8 +37,7 @@ abstract class _ProductDetailControllerBase with Store {
   @action
   addToCart() async{
     await _usecaseAddToCart(product as Product);
-    await getCountCartItems();
-    Modular.to.pushNamed("/cart");
+    Modular.to.pushNamed("/cart").then((value) => getCountCartItems());
   }
 
 }
